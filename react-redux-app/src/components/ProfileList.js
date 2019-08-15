@@ -3,13 +3,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 
+import { getData } from '../actions';
+
 import Profile from './Profile';
 
 const ProfileList = props => {
     return (
         <>
         <h1>Welcome to Stock Profiles App</h1>
-        <button>
+        <button onClick={props.getData}>
             {props.isLoading ?
             (<Loader 
             type="Watch"
@@ -19,7 +21,7 @@ const ProfileList = props => {
             />) :
             ('Get Profile Data')}
         </button>
-        {props.profiles && props.profiles.map(profile => (
+        {props.profile && props.profile.map(profile => (
             <Profile key={profile.companyName} profile={profile} />
         ))}
         </>
@@ -33,4 +35,4 @@ const mapToStateProps = state => {
     };
 };
 
-export default connect(mapToStateProps, {})(ProfileList);
+export default connect(mapToStateProps, { getData })(ProfileList);
