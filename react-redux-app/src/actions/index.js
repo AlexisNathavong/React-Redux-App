@@ -1,2 +1,2 @@
-export { getData, FETCHING_PROFILE_DATA } from './ProfileActions';
+export { getData, FETCH_PROFILE_DATA_START, FETCH_PROFILE_DATA_SUCCESS, FETCH_PROFILE_DATA_FAILURE } from './ProfileActions';
 

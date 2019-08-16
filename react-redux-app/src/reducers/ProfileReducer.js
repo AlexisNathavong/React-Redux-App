@@ -1,4 +1,4 @@
-import { FETCHING_PROFILE_DATA } from '../actions';
+import { FETCH_PROFILE_DATA_START, FETCH_PROFILE_DATA_SUCCESS, FETCH_PROFILE_DATA_FAILURE } from '../actions';
 
 
 const initialState = {
@@ -9,10 +9,18 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case FETCHING_PROFILE_DATA:
+        case FETCH_PROFILE_DATA_START:
             return {
                 ...state,
                 isLoading: true,
+                error: ''
+            };
+
+        case FETCH_PROFILE_DATA_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                profile: action.payload,
                 error: ''
             }
         default:

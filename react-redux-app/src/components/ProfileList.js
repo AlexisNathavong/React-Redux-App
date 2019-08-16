@@ -21,9 +21,9 @@ const ProfileList = props => {
             />) :
             ('Get Profile Data')}
         </button>
-        {props.profile && props.profile.map(profile => (
-            <Profile key={profile.companyName} profile={profile} />
-        ))}
+        
+            <Profile  />
+       
         </>
     );
 }
@@ -31,7 +31,7 @@ const ProfileList = props => {
 const mapToStateProps = state => {
     return {
         isLoading: state.isLoading,
-        profiles: state.profiles
+        
     };
 };
 
