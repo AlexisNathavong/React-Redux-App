@@ -2,7 +2,7 @@ import { FETCH_IMAGE_DATA_START, FETCH_IMAGE_DATA_SUCCESS, FETCH_IMAGE_DATA_FAIL
 
 
 const initialState = {
-   data: {},
+   gallery: [],
    isLoading: false,
    error: ''
 }
@@ -20,7 +20,7 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                data: action.payload,
+                gallery: action.payload,
                 error: ''
             };
 

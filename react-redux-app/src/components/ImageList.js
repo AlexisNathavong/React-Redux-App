@@ -5,21 +5,27 @@ import { getData } from './actions';
 import Image from './Image';
 
 const ImageList = props => {
+    console.log(props)
+
     return (
         <>
-        <h1>Welcome</h1>
-        <button onClick={props.getData}>
-            {props.isLoading ?
-            (<Loader
-               type="Watch"
-               color="#00BFFF"
-               height="40"
-               width="40"
-             /> ) : 
-             ('Get Image Data')}
-        </button>
+            <h1>Welcome</h1>
+            <button onClick={props.getData}>
+                {props.isLoading ?
+                (<Loader
+                type="Watch"
+                color="#00BFFF"
+                height="40"
+                width="40"
+                /> ) : 
+                ('Get Image Data')}
+            </button>
 
-        <Image />
+            {console.log('string of props',props)}
+                {props.gallery.map(image => {
+                    return <Image author={image.author} image={image.url} height={props.height} width={props.width} />
+                })}
+            
         </>
 
     );
@@ -28,6 +34,7 @@ const ImageList = props => {
 const mapStateToProps = state => {
     return {
         isLoading: state.isLoading,
+        gallery: state.gallery
     };
 };
 

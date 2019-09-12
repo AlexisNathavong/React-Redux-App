@@ -9,8 +9,9 @@ export const getData = () => {
         dispatch({ type: 'FETCH_IMAGE_DATA_START'});
         axios.get('https://picsum.photos/v2/list')
             .then(res => {
-                console.log('Image api', res)
-                dispatch({ type: FETCH_IMAGE_DATA_SUCCESS, payload: res.data.data})
+                console.log('Image api', res.data)
+                dispatch({ type: FETCH_IMAGE_DATA_SUCCESS, payload: res.data})
+
             })
             .catch(err => {
                 console.log('Error in Image api', err.response)
