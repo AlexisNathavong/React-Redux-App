@@ -1,0 +1,15 @@
+/* body {
+	background-image: url('./imgs/pattern-wallpaper3.png');
+
+}
+body::after {
+	content: "";
+	opacity: 0.45;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1; 
+	background-attachment: fixed;
+} */

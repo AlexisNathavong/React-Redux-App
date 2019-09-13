@@ -23,7 +23,7 @@ const ImageList = props => {
 
             {console.log('string of props',props)}
                 {props.gallery.map(image => {
-                    return <Image author={image.author} image={image.url} height={props.height} width={props.width} />
+                    return <Image author={image.author} image={image.download_url} />
                 })}
             
         </>

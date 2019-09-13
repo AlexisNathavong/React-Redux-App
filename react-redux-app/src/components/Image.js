@@ -1,21 +1,22 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+
+import { Card, Author, Images } from './StyledWidgets';
 
 const Image = props => {
     return (
-        <div>
-            <h2>{props.author}</h2>
-            <img src={props.url} alt="imgs of photography" />
+        <Card>
+            <Author>
+                <h2>{props.author}</h2>
+            </Author>
+            <Images>
+            <img src={props.image} alt="photography" width="200px" />
+            </Images>
             <p>{props.height}</p>
             <p>{props.width}</p>
-        </div>
+        </Card>
     )
 }
 
-// const mapStateToProps = state => {
-//     return {
-//        data: state.data,
-//     }
-// }
+
 
 export default Image;
